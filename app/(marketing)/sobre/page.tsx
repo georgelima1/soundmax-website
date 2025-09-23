@@ -1,8 +1,8 @@
 export default function SobrePage() {
   return (
     <section className="container-wrap section">
-      <h1 className="section-title">Sobre a AMPLICO</h1>
-      <p className="section-sub">Tecnologia brasileira em amplificação de alta performance desde 2008.</p>
+      <h1 className="section-title">Sobre a SOUNDMAX Audio Parts</h1>
+      <p className="section-sub">Tecnologia brasileira em amplificação de alta performance desde 2013.</p>
       <div className="mt-8 grid md:grid-cols-2 gap-8">
         <div className="card p-6">
           <h3 className="text-lg font-semibold">Missão</h3>

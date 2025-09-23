@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,rgb(59_130_246/0.30),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,rgb(59_130_246/0.30),transparent)]" />
         <div className="container-wrap section">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
@@ -35,7 +35,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-soft">
-                <Image src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1400&auto=format&fit=crop" alt="Amplificador" fill className="object-cover" />
+                <Image src="/images/kprohome.jpg" alt="K Pro Home" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -63,9 +63,9 @@ export default function HomePage() {
         </div>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           {[
-            { name: "Série K", desc: "Alta potência para o dia a dia", img: "https://images.unsplash.com/photo-1542228262-3d663b3064b0?q=80&w=1200&auto=format&fit=crop" },
-            { name: "Série K Pro", desc: "Hi-end para audição crítica.", img: "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?q=80&w=1200&auto=format&fit=crop" },
-            { name: "Série BOB", desc: "4 canais com muita versatilidade.", img: "https://images.unsplash.com/photo-1495305379050-64540d6ee95d?q=80&w=1200&auto=format&fit=crop" }
+            { name: "Série K", desc: "Alta potência para o dia a dia", img: "/images/kserieshome.png" },
+            { name: "Série K Pro", desc: "Hi-end para audição crítica.", img: "/images/kprohome.png" },
+            { name: "Série BOB", desc: "4 canais com muita versatilidade.", img: "/images/bobhome.png" }
           ].map((s, i) => (
             <Link key={i} href="/produtos" className="card overflow-hidden group">
               <div className="relative aspect-[4/3]">

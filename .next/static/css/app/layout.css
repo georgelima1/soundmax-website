@@ -502,6 +502,9 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+.pointer-events-none {
+  pointer-events: none;
+}
 .absolute {
   position: absolute;
 }
@@ -749,8 +752,14 @@ video {
 .text-white\/80 {
   color: rgb(255 255 255 / 0.8);
 }
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
 .opacity-80 {
   opacity: 0.8;
+}
+.opacity-50 {
+  opacity: 0.5;
 }
 .shadow-soft {
   --tw-shadow: 0 10px 30px -12px rgba(0,0,0,0.45);
@@ -867,6 +876,10 @@ header.sticky { backdrop-filter: saturate(180%) blur(8px); background: rgba(10,1
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .group:hover .group-hover\:scale-105 {
