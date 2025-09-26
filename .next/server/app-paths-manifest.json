@@ -1,7 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/(marketing)/produtos/page": "app/(marketing)/produtos/page.js",
-  "/(marketing)/sobre/page": "app/(marketing)/sobre/page.js",
-  "/(contact)/contato/page": "app/(contact)/contato/page.js",
-  "/(marketing)/onde-comprar/page": "app/(marketing)/onde-comprar/page.js"
-}
+{}
