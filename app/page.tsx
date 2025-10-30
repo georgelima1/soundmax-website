@@ -1,41 +1,69 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, PlayCircle, Speaker, ShieldCheck, Rocket } from "lucide-react";
+import VideoLightbox from "@/components/videolightbox";
 
 export default function HomePage() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,rgb(59_130_246/0.30),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,rgba(225,29,46,0.30),transparent)]" />
         <div className="container-wrap section">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <span className="badge">NOVO • Série K Pro</span>
               <h1 className="text-4xl md:text-5xl font-extrabold mt-4 leading-tight">
-                Potência e controle<br />para qualquer palco
+                Potência e sonoridade<br />para qualquer evento
               </h1>
               <p className="text-white/70 mt-4 max-w-xl">
-                Amplificadores com DSP integrado, proteção inteligente, eficiência elevada e design compacto. Projetados para performance extrema em som automotivo e profissional.
+                Amplificadores com DSP integrado, proteção inteligente, eficiência elevada e design compacto. Projetados para performance extrema em som profissional.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link className="btn btn-primary" href="/produtos">
                   Ver produtos <ArrowRight size={18} />
                 </Link>
-                <Link className="btn btn-ghost" href="#series">
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => setOpen(true)}
+                >
                   Assistir vídeo <PlayCircle size={18} />
-                </Link>
+                </button>
               </div>
+
+              {/* YouTube */}
+              {/*
+                <VideoLightbox
+                  open={open}
+                  onClose={() => setOpen(false)}
+                  provider="youtube"
+                  videoId="dQw4w9WgXcQ"   //ID
+                  start={0}
+                />
+              */}
+
+              {/* Instagram */}
+              <VideoLightbox
+                open={open}
+                onClose={() => setOpen(false)}
+                provider="instagram"
+                videoId="DC2FnOzSFl4"   // shortcode do reel/post
+              />
+
               <div className="mt-6 flex gap-6 text-sm text-white/70">
-                <div className="flex items-center gap-2"><Rocket size={16}/> +20dB headroom</div>
-                <div className="flex items-center gap-2"><ShieldCheck size={16}/> Proteções inteligentes</div>
-                <div className="flex items-center gap-2"><Speaker size={16}/> DSP integrado
+                <div className="flex items-center gap-2"><Rocket size={16} /> ≈ +30% de potência</div>
+                <div className="flex items-center gap-2"><ShieldCheck size={16} /> Proteções inteligentes</div>
+                <div className="flex items-center gap-2"><Speaker size={16} /> DSP integrado
                 </div>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-soft">
-                <Image src="/images/kprohome.jpg" alt="K Pro Home" fill className="object-cover" />
+                <Image src="/images/kprohome2.png" alt="K Pro Home" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -63,8 +91,8 @@ export default function HomePage() {
         </div>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           {[
-            { name: "Série K", desc: "Alta potência para o dia a dia", img: "/images/kserieshome.png" },
-            { name: "Série K Pro", desc: "Hi-end para audição crítica.", img: "/images/kprohome.png" },
+            { name: "Série K", desc: "Alta potência para o dia a dia", img: "/images/khome.png" },
+            { name: "Série K Pro", desc: "Hi-end para audição crítica.", img: "/images/kpro-home.png" },
             { name: "Série BOB", desc: "4 canais com muita versatilidade.", img: "/images/bobhome.png" }
           ].map((s, i) => (
             <Link key={i} href="/produtos" className="card overflow-hidden group">
