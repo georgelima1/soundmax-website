@@ -82,12 +82,11 @@ export default function HomePage() {
 
       {/* SÉRIES */}
       <section id="series" className="container-wrap section">
-        <div className="flex items-end justify-between gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="section-title">Nossas séries</h2>
             <p className="section-sub">Escolha a linha ideal para o seu projeto.</p>
           </div>
-          <Link href="/produtos" className="btn btn-ghost">Ver catálogo</Link>
         </div>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           {[
