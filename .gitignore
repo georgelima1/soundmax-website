@@ -1,4 +1,5 @@
 node_modules
+out
 .next
 .next/app-build-manifest.json
 .next/build-manifest.json
