@@ -10,9 +10,9 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: "#2563eb", // blue-600
-          dark: "#1d4ed8",
-          light: "#3b82f6",
+          DEFAULT: "#E11D2E",
+          dark: "#9F0F1C",
+          light: "#F54A5A",
         },
         bg: {
           DEFAULT: "#0B0B0C",
