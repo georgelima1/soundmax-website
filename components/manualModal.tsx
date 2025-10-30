@@ -33,7 +33,7 @@ const manuals = {
     title: "Série BOB",
     items: [
       { label: "BOB1500.4", file: "https://drive.google.com/file/d/1-ANQ2ep4ICxHM9UoszRqTAWqzrl14Xe4/view" },
-      { label: "BOB3gi000.4", file: "https://drive.google.com/file/d/1-ANQ2ep4ICxHM9UoszRqTAWqzrl14Xe4/view" },
+      { label: "BOB3000.4", file: "https://drive.google.com/file/d/1-ANQ2ep4ICxHM9UoszRqTAWqzrl14Xe4/view" },
     ],
   },
 };
