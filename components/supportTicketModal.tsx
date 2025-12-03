@@ -3,15 +3,24 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
+import ptMessages from "@/messages/pt.json";
+import enMessages from "@/messages/en.json";
+
+type Locale = "pt" | "en";
+
 type Props = {
   open: boolean;
   onClose: () => void;
+  locale: Locale;
 };
 
-export default function SupportTicketModal({ open, onClose }: Props) {
+export default function SupportTicketModal({ open, onClose, locale }: Props) {
   const [sending, setSending] = useState(false);
   const [ok, setOk] = useState<boolean | null>(null);
   const [previews, setPreviews] = useState<string[]>([]);
+
+  const messages = locale === "en" ? enMessages : ptMessages;
+  const t = messages.supportTicketModal;
 
   // bloqueia scroll da página quando o modal está aberto
   useEffect(() => {
@@ -64,7 +73,7 @@ export default function SupportTicketModal({ open, onClose }: Props) {
       return;
     }
 
-    // monta mensagem para WhatsApp
+    // monta mensagem para WhatsApp (mantive texto em PT, já que suporte é BR)
     const textoWhatsapp =
       `Novo chamado de suporte (SITE):\n` +
       `Nome: ${nome}\n` +
@@ -76,20 +85,21 @@ export default function SupportTicketModal({ open, onClose }: Props) {
 
     const encoded = encodeURIComponent(textoWhatsapp);
 
-    // Número comercial para suporte técnico.
-    // IMPORTANTE: precisa estar só com dígitos + DDI.
-    // Exemplo: (85) 3017-4611 vira "558530174611"
-    const numeroEmpresaSuporte = "558530174611";
+    // Número comercial para suporte técnico (só dígitos + DDI)
+    const numeroEmpresaSuporte = "5585974016549";
 
     // abre WhatsApp Web / Mobile já com a mensagem preenchida
-    window.open(`https://wa.me/${numeroEmpresaSuporte}?text=${encoded}`, "_blank");
+    window.open(
+      `https://wa.me/${numeroEmpresaSuporte}?text=${encoded}`,
+      "_blank"
+    );
 
     setOk(true);
     setSending(false);
     form.reset();
     setPreviews([]);
 
-    // você pode fechar o modal automaticamente se quiser:
+    // se quiser pode fechar automaticamente:
     // onClose();
   }
 
@@ -98,7 +108,7 @@ export default function SupportTicketModal({ open, onClose }: Props) {
       {/* fundo escurecido, clicável pra fechar */}
       <button
         className="absolute inset-0 bg-black/70"
-        aria-label="Fechar"
+        aria-label={t.ariaBackgroundClose}
         onClick={onClose}
       />
 
@@ -107,30 +117,30 @@ export default function SupportTicketModal({ open, onClose }: Props) {
         {/* botão X */}
         <button
           className="absolute -top-4 -right-4 bg-white text-black rounded-full p-2 shadow"
-          aria-label="Fechar"
+          aria-label={t.ariaClose}
           onClick={onClose}
         >
           <X size={16} />
         </button>
 
         <h2 className="text-xl font-semibold text-white">
-          Abrir chamado de suporte
+          {t.title}
         </h2>
         <p className="text-white/60 text-sm mt-1">
-          Descreva o problema e anexe fotos. Vamos atender pelo WhatsApp.
+          {t.subtitle}
         </p>
 
         <form onSubmit={onSubmit} className="space-y-4 mt-6" noValidate>
           {/* Nome */}
           <div className="flex flex-col">
             <label className="text-sm font-medium text-white mb-1">
-              Nome *
+              {t.fields.nameLabel}
             </label>
             <input
               name="nome"
               required
               className="bg-bg border border-white/10 rounded-lg px-3 py-2 text-sm text-white"
-              placeholder="Seu nome"
+              placeholder={t.fields.namePlaceholder}
             />
           </div>
 
@@ -138,27 +148,27 @@ export default function SupportTicketModal({ open, onClose }: Props) {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label className="text-sm font-medium text-white mb-1">
-                WhatsApp
+                {t.fields.whatsappLabel}
               </label>
               <input
                 name="whatsapp"
                 className="bg-bg border border-white/10 rounded-lg px-3 py-2 text-sm text-white"
-                placeholder="(85) 99999-0000"
+                placeholder={t.fields.whatsappPlaceholder}
               />
               <p className="text-[11px] text-white/50 mt-1">
-                WhatsApp ou e-mail (pelo menos um).
+                {t.fields.contactHint}
               </p>
             </div>
 
             <div className="flex flex-col">
               <label className="text-sm font-medium text-white mb-1">
-                E-mail
+                {t.fields.emailLabel}
               </label>
               <input
                 name="email"
                 type="email"
                 className="bg-bg border border-white/10 rounded-lg px-3 py-2 text-sm text-white"
-                placeholder="voce@exemplo.com"
+                placeholder={t.fields.emailPlaceholder}
               />
             </div>
           </div>
@@ -166,21 +176,21 @@ export default function SupportTicketModal({ open, onClose }: Props) {
           {/* Descrição */}
           <div className="flex flex-col">
             <label className="text-sm font-medium text-white mb-1">
-              Descreva o problema *
+              {t.fields.problemLabel}
             </label>
             <textarea
               name="mensagem"
               required
               rows={4}
               className="bg-bg border border-white/10 rounded-lg px-3 py-2 text-sm text-white resize-none"
-              placeholder="Ex: Amplificador K9.0 desarmando com proteção após 3 minutos de uso..."
+              placeholder={t.fields.problemPlaceholder}
             />
           </div>
 
           {/* Upload imagens */}
           <div className="flex flex-col">
             <label className="text-sm font-medium text-white mb-1">
-              Fotos / Vídeo da instalação ou problema para nos ajudar a identificar a causa (opcional)
+              {t.fields.mediaLabel}
             </label>
             <input
               name="fotos"
@@ -194,8 +204,7 @@ export default function SupportTicketModal({ open, onClose }: Props) {
             {previews.length > 0 && (
               <>
                 <p className="text-[11px] text-white/50 mt-2">
-                  Essas mídias NÃO são enviadas automaticamente.
-                  Quando o WhatsApp abrir, anexe essas mesmas fotos/vídeos na conversa.
+                  {t.fields.mediaHint}
                 </p>
 
                 <div className="mt-3 flex flex-wrap gap-3">
@@ -204,7 +213,6 @@ export default function SupportTicketModal({ open, onClose }: Props) {
                       key={idx}
                       className="relative w-20 h-20 rounded-lg overflow-hidden border border-white/10 bg-bg"
                     >
-                      {/* pode ser imagem ou thumb de vídeo, aqui mostramos como imagem direta */}
                       <img
                         src={src}
                         alt={`preview ${idx + 1}`}
@@ -226,7 +234,7 @@ export default function SupportTicketModal({ open, onClose }: Props) {
               required
             />
             <span>
-              Autorizo o contato da SoundMax para suporte técnico.
+              {t.fields.consentLabel}
             </span>
           </div>
 
@@ -236,19 +244,19 @@ export default function SupportTicketModal({ open, onClose }: Props) {
             disabled={sending}
             className="btn btn-primary w-full"
           >
-            {sending ? "Abrindo WhatsApp..." : "Enviar e abrir WhatsApp"}
+            {sending ? t.buttons.submitSending : t.buttons.submitIdle}
           </button>
 
           {/* Feedback */}
           {ok === false && (
             <p className="text-red-400 text-sm mt-2">
-              Preencha os campos obrigatórios. WhatsApp ou e-mail é obrigatório.
+              {t.feedback.errorRequired}
             </p>
           )}
 
           {ok === true && (
             <p className="text-green-400 text-sm mt-2">
-              Pronto! Só anexar as fotos lá no WhatsApp 👍
+              {t.feedback.success}
             </p>
           )}
         </form>

@@ -1,0 +1,260 @@
+{
+  "menu": {
+    "home": "Home",
+    "products": "Produtos",
+    "about": "Sobre",
+    "support": "Suporte",
+    "where": "Onde comprar",
+    "contact": "Contato"
+  },
+  "button.products": "Ver produtos",
+  "home": {
+    "hero": {
+      "badge": "NOVO • Série K Pro",
+      "title": {
+        "line1": "Potência e sonoridade",
+        "line2": "para qualquer evento"
+      },
+      "subtitle": "Amplificadores com DSP integrado, proteção inteligente, eficiência elevada e design compacto. Projetados para performance extrema em som profissional.",
+      "cta": {
+        "products": "Ver produtos",
+        "video": "Assistir vídeo"
+      },
+      "bullets": {
+        "power": "≈ +30% de potência",
+        "protection": "Proteções inteligentes",
+        "dsp": "DSP integrado"
+      }
+    },
+    "logos": {
+      "subtitle": "Marcas e eventos onde nossos amplificadores já estiveram"
+    },
+    "series": {
+      "title": "Nossas séries",
+      "subtitle": "Escolha a linha ideal para o seu projeto.",
+      "k": {
+        "name": "Série K",
+        "desc": "Alta potência para o dia a dia"
+      },
+      "kpro": {
+        "name": "Série K Pro",
+        "desc": "Hi-end para audição crítica."
+      },
+      "bob": {
+        "name": "Série BOB",
+        "desc": "4 canais com muita versatilidade."
+      }
+    },
+    "features": {
+      "efficiency": {
+        "title": "+ Eficiência",
+        "desc": "Arquitetura de saída otimizada para máximo SPL com baixa distorção."
+      },
+      "protection": {
+        "title": "Proteções",
+        "desc": "Sobretensão, temperatura, curto e sobrecarga com recuperação automática."
+      },
+      "support": {
+        "title": "Garantia & Suporte",
+        "desc": "Rede de assistência técnica e garantia oficial no Brasil."
+      }
+    },
+    "cta": {
+      "title": "Precisa de ajuda para escolher?",
+      "subtitle": "Fale com nosso time técnico e receba uma indicação sob medida.",
+      "button": "Fale conosco"
+    }
+  },
+  "footer": {
+    "slogan": "Pra quem leva o áudio a sério!",
+    "institutional": {
+      "title": "Institucional",
+      "about": "Sobre",
+      "whereToBuy": "Onde comprar",
+      "support": "Suporte"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacyPolicy": "Política de Privacidade",
+      "terms": "Termos"
+    },
+    "contact": {
+      "title": "Contato",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    },
+    "rights": "Todos os direitos reservados."
+  },
+  "contact": {
+    "title": "Fale conosco",
+    "subtitle": "Responderemos o quanto antes.",
+    "fieldName": "Seu nome *",
+    "fieldEmail": "Seu e-mail",
+    "fieldWhatsapp": "Seu WhatsApp",
+    "fieldMessage": "Como podemos ajudar? *",
+    "infoAtLeastOneContact": "Informe WhatsApp ou e-mail. Pelo menos um é obrigatório.",
+    "privacyConsent": "Li e concordo com a Política de Privacidade.",
+    "sending": "Enviando...",
+    "sendMessage": "Enviar mensagem",
+    "success": "Mensagem enviada. Obrigado!",
+    "error": "Não foi possível enviar. Tente novamente.",
+    "errorMissingContact": "Preencha um contato WhatsApp ou e-mail.",
+    "whatsappMessageTitle": "Novo contato pelo site SoundMax",
+    "name": "Nome",
+    "customerWhatsapp": "WhatsApp do cliente",
+    "customerEmail": "Email do cliente",
+    "message": "Mensagem",
+    "consent": "Consentimento LGPD",
+    "yes": "Sim",
+    "no": "Não"
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "subtitle": "Resumo LGPD com finalidades, bases legais e direitos do titular.",
+    "p1": "Coletamos nome, e-mail e mensagem via formulário de contato para atendimento ao cliente (base legal: legítimo interesse/consentimento).",
+    "p2": "Você pode solicitar acesso, correção ou exclusão dos seus dados via e-mail do DPO: dpo@empresa.com.br."
+  },
+  "productsPage": {
+    "title": "Catálogo de produtos",
+    "subtitle": "Explore os modelos por série e baixe os manuais técnicos.",
+    "seriesK": "Série K",
+    "seriesKPro": "Série K Pro",
+    "gotoKPro": "Ir para Série K Pro",
+    "backToK": "Voltar à Série K",
+    "details": "Ver detalhes",
+    "manualPdf": "Manual (PDF)",
+    "manualSoon": "Manual (em breve)"
+  },
+  "productPage": {
+    "breadcrumbProducts": "Produtos",
+    "series": {
+      "kseries": "Série K",
+      "kproseries": "Série K Pro"
+    },
+    "kpi": {
+      "power": "Potência",
+      "impedance": "Impedância",
+      "supply": "Alimentação",
+      "channels": "Canais"
+    },
+    "specsTitle": "Especificações técnicas",
+    "buyButton": "Onde comprar",
+    "manualButton": "Manual (PDF)"
+  },
+  "aboutPage": {
+    "heroKicker": "SOUNDMAX AUDIO PARTS",
+    "heroTitle": "Potência real. Confiabilidade real.",
+    "heroText": "Tecnologia brasileira em amplificação de alta performance desde 2013. Projetos pensados para palco, competição e rua — com suporte direto de fábrica.",
+
+    "whoWeAreTitle": "Quem somos",
+    "whoWeAreP1": "A SOUNDMAX é especializada em amplificadores de alta potência e alta eficiência, desenvolvidos para entregar resultado consistente em pressão sonora, definição e estabilidade elétrica. Nossa engenharia atua com foco em confiabilidade, proteção e suporte pós-venda — porque potência sem controle não serve.",
+    "whoWeAreP2": "Atendemos tanto o público de som automotivo extremo quanto o profissional de áudio (palco, trio, eventos), com produtos projetados, montados e testados no Brasil.",
+
+    "missionTitle": "Missão",
+    "missionP1": "Fornecer equipamentos de áudio confiáveis, estáveis e tecnicamente superiores — para quem precisa de desempenho real, suporte rápido e durabilidade de verdade.",
+
+    "valuesTitle": "Nossos valores",
+    "values": {
+      "qualityTitle": "Qualidade",
+      "qualityText": "Produtos confiáveis, alta entrega de potência, resistência mecânica e elétrica, e longa vida útil.",
+
+      "innovationTitle": "Inovação",
+      "innovationText": "Evolução contínua de topologia, proteção inteligente, gestão térmica e eficiência energética. A gente não copia: a gente melhora.",
+
+      "commitmentTitle": "Compromisso com o cliente",
+      "commitmentText": "Atendimento direto, suporte técnico sem enrolação e foco total em fazer o sistema tocar do jeito certo.",
+
+      "localTitle": "Responsabilidade local",
+      "localText": "Engenharia nacional, geração de empregos e desenvolvimento da indústria de áudio no Ceará.",
+
+      "safetyTitle": "Segurança e conformidade",
+      "safetyText": "Proteções eletrônicas, boas práticas de instalação, uso de componentes selecionados e respeito a normas técnicas.",
+
+      "ethicsTitle": "Ética e transparência",
+      "ethicsText": "Trabalho sério, honesto e direto — com clientes, fornecedores e parceiros."
+    }
+  },
+  "supportPage": {
+    "title": "Suporte & Assistência",
+    "subtitle": "Baixe manuais, abra um ticket ou localize a assistência técnica.",
+
+    "manuals": {
+      "title": "Manuais",
+      "text": "PDFs oficiais por série e modelo.",
+      "button": "Ver arquivos"
+    },
+
+    "immediate": {
+      "title": "Atendimento imediato",
+      "line1": "WhatsApp técnico: (83) 98872-7964",
+      "line2": "Segunda a Sexta • 9h às 18h",
+      "button": "Falar agora no WhatsApp"
+    },
+
+    "ticket": {
+      "title": "Abrir chamado (Assistência Técnica)",
+      "text": "Descreva o problema e anexe fotos/vídeos.",
+      "button": "Abrir ticket"
+    },
+
+    "assistance": {
+      "title": "Assistência técnica",
+      "text": "Rede autorizada com garantia.",
+      "button": "Localizar"
+    }
+  },
+  "manualsModal": {
+    "title": "Manuais técnicos (PDF)",
+    "subtitle": "Faça o download do manual oficial de cada modelo.",
+    "ariaBackgroundClose": "Fechar lista de manuais",
+    "ariaClose": "Fechar",
+    "series": {
+      "kseries": {
+        "title": "Série K",
+        "tagline": "Alta potência automotiva"
+      },
+      "kproseries": {
+        "title": "Série K PRO",
+        "tagline": "Palco • PA • Profissional"
+      },
+      "bobseries": {
+        "title": "Série BOB",
+        "tagline": "Multicanal / 4 canais"
+      }
+    },
+    "buttons": {
+      "download": "Baixar",
+      "comingSoon": "Em breve",
+      "comingSoonTitle": "Em breve"
+    },
+    "footer": "Recomendações de instalação, bitola de cabo e instruções de segurança estão descritas em cada manual. Siga sempre os limites elétricos do produto."
+  },
+  "supportTicketModal": {
+    "ariaBackgroundClose": "Fechar janela de chamado de suporte",
+    "ariaClose": "Fechar",
+    "title": "Abrir chamado de suporte",
+    "subtitle": "Descreva o problema e, se possível, anexe fotos. O atendimento segue pelo WhatsApp.",
+    "fields": {
+      "nameLabel": "Nome *",
+      "namePlaceholder": "Seu nome",
+      "whatsappLabel": "WhatsApp",
+      "whatsappPlaceholder": "(85) 99999-0000",
+      "contactHint": "WhatsApp ou e-mail (pelo menos um).",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "voce@exemplo.com",
+      "problemLabel": "Descreva o problema *",
+      "problemPlaceholder": "Ex: Amplificador K9.0 desarmando com proteção após 3 minutos de uso...",
+      "mediaLabel": "Fotos / vídeo da instalação ou problema (opcional)",
+      "mediaHint": "Essas mídias não são enviadas automaticamente. Quando o WhatsApp abrir, anexe essas mesmas fotos/vídeos na conversa.",
+      "consentLabel": "Autorizo o contato da SoundMax para suporte técnico."
+    },
+    "buttons": {
+      "submitIdle": "Enviar e abrir WhatsApp",
+      "submitSending": "Abrindo WhatsApp..."
+    },
+    "feedback": {
+      "errorRequired": "Preencha os campos obrigatórios. WhatsApp ou e-mail é obrigatório.",
+      "success": "Pronto! É só anexar as fotos lá no WhatsApp 👍"
+    }
+  }
+}

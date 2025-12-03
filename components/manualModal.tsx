@@ -3,34 +3,36 @@
 import { useEffect } from "react";
 import { X, FileDown } from "lucide-react";
 
+import ptMessages from "@/messages/pt.json";
+import enMessages from "@/messages/en.json";
+
+type Locale = "pt" | "en";
+
 type ManualsModalProps = {
   open: boolean;
   onClose: () => void;
+  locale: Locale;
 };
 
-// você pode manter esses dados fixos aqui
-// ou mover para um /lib/manuals.ts depois
+// Só lista de modelos + arquivos (nomes de modelos não mudam)
 const manuals = {
   kseries: {
-    title: "Série K",
     items: [
-      { label: "K6.0", file: "https://drive.google.com/file/d/1E8gMP5dHkwlllq-CTxoHNoHv0VH9GO9Y/view" },
-      { label: "K9.0", file: "https://drive.google.com/file/d/1E8gMP5dHkwlllq-CTxoHNoHv0VH9GO9Y/view" },
-      { label: "K25",  file: "https://drive.google.com/file/d/1E8gMP5dHkwlllq-CTxoHNoHv0VH9GO9Y/view" },
-      { label: "K50",  file: "https://drive.google.com/file/d/1E8gMP5dHkwlllq-CTxoHNoHv0VH9GO9Y/view" },
+      { label: "K6.0", file: "/manuals/manual_linha_k_final.pdf" },
+      { label: "K9.0", file: "/manuals/manual_linha_k_final.pdf" },
+      { label: "K25",  file: "/manuals/manual_linha_k_final.pdf" },
+      { label: "K50",  file: "/manuals/manual_linha_k_final.pdf" },
     ],
   },
   kproseries: {
-    title: "Série K PRO",
     items: [
-      { label: "K5 Pro HD", file: "/manuals/k5-pro-hd.pdf" },
-      { label: "K9 Pro HD", file: "/manuals/k5-pro-hd.pdf" },
-      { label: "K18 Pro", file: "/manuals/k5-pro-hd.pdf" },
-      { label: "K25 Pro", file: "/manuals/k5-pro-hd.pdf" },
+      { label: "K5 Pro HD",  file: "/manuals/manual_linha_kpro_final.pdf" },
+      { label: "K9 Pro HD",  file: "/manuals/manual_linha_kpro_final.pdf" },
+      { label: "K18 Pro",    file: "/manuals/manual_linha_kpro_final.pdf" },
+      { label: "K25 Pro",    file: "/manuals/manual_linha_kpro_final.pdf" },
     ],
   },
   bobseries: {
-    title: "Série BOB",
     items: [
       { label: "BOB1500.4", file: "https://drive.google.com/file/d/1-ANQ2ep4ICxHM9UoszRqTAWqzrl14Xe4/view" },
       { label: "BOB3000.4", file: "https://drive.google.com/file/d/1-ANQ2ep4ICxHM9UoszRqTAWqzrl14Xe4/view" },
@@ -38,8 +40,10 @@ const manuals = {
   },
 };
 
-export default function ManualsModal({ open, onClose }: ManualsModalProps) {
-  // mesmo esquema do outro modal: trava scroll ao abrir e restaura ao fechar
+export default function ManualsModal({ open, onClose, locale }: ManualsModalProps) {
+  const messages = locale === "en" ? enMessages : ptMessages;
+  const t = messages.manualsModal;
+
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -67,7 +71,7 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
       {/* fundo escurecido */}
       <button
         className="absolute inset-0 bg-black/70"
-        aria-label="Fechar lista de manuais"
+        aria-label={t.ariaBackgroundClose}
         onClick={onClose}
       />
 
@@ -76,26 +80,26 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
         {/* Fechar */}
         <button
           className="absolute -top-4 -right-4 bg-white text-black rounded-full p-2 shadow"
-          aria-label="Fechar"
+          aria-label={t.ariaClose}
           onClick={onClose}
         >
           <X size={16} />
         </button>
 
         <h2 className="text-xl font-semibold text-white">
-          Manuais técnicos (PDF)
+          {t.title}
         </h2>
         <p className="text-white/60 text-sm mt-1">
-          Faça o download do manual oficial de cada modelo.
+          {t.subtitle}
         </p>
 
         <div className="mt-6 space-y-8">
           {/* Série K */}
           <div>
             <h3 className="text-lg font-semibold text-white flex items-baseline gap-2">
-              <span>{manuals.kseries.title}</span>
+              <span>{t.series.kseries.title}</span>
               <span className="text-xs text-white/40 uppercase tracking-wider">
-                Alta potência automotiva
+                {t.series.kseries.tagline}
               </span>
             </h3>
 
@@ -114,15 +118,15 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
                       className="btn btn-ghost text-xs flex items-center gap-2"
                     >
                       <FileDown size={16} />
-                      <span>Baixar</span>
+                      <span>{t.buttons.download}</span>
                     </a>
                   ) : (
                     <button
                       className="btn btn-ghost text-xs opacity-50 cursor-not-allowed"
-                      title="Em breve"
+                      title={t.buttons.comingSoonTitle}
                     >
                       <FileDown size={16} />
-                      <span>Em breve</span>
+                      <span>{t.buttons.comingSoon}</span>
                     </button>
                   )}
                 </li>
@@ -133,9 +137,9 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
           {/* Série K PRO */}
           <div>
             <h3 className="text-lg font-semibold text-white flex items-baseline gap-2">
-              <span>{manuals.kproseries.title}</span>
+              <span>{t.series.kproseries.title}</span>
               <span className="text-xs text-white/40 uppercase tracking-wider">
-                Palco • PA • Profissional
+                {t.series.kproseries.tagline}
               </span>
             </h3>
 
@@ -154,15 +158,15 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
                       className="btn btn-ghost text-xs flex items-center gap-2"
                     >
                       <FileDown size={16} />
-                      <span>Baixar</span>
+                      <span>{t.buttons.download}</span>
                     </a>
                   ) : (
                     <button
                       className="btn btn-ghost text-xs opacity-50 cursor-not-allowed"
-                      title="Em breve"
+                      title={t.buttons.comingSoonTitle}
                     >
                       <FileDown size={16} />
-                      <span>Em breve</span>
+                      <span>{t.buttons.comingSoon}</span>
                     </button>
                   )}
                 </li>
@@ -173,9 +177,9 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
           {/* Série BOB */}
           <div>
             <h3 className="text-lg font-semibold text-white flex items-baseline gap-2">
-              <span>{manuals.bobseries.title}</span>
+              <span>{t.series.bobseries.title}</span>
               <span className="text-xs text-white/40 uppercase tracking-wider">
-                Multicanal / 4 canais
+                {t.series.bobseries.tagline}
               </span>
             </h3>
 
@@ -194,15 +198,15 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
                       className="btn btn-ghost text-xs flex items-center gap-2"
                     >
                       <FileDown size={16} />
-                      <span>Baixar</span>
+                      <span>{t.buttons.download}</span>
                     </a>
                   ) : (
                     <button
                       className="btn btn-ghost text-xs opacity-50 cursor-not-allowed"
-                      title="Em breve"
+                      title={t.buttons.comingSoonTitle}
                     >
                       <FileDown size={16} />
-                      <span>Em breve</span>
+                      <span>{t.buttons.comingSoon}</span>
                     </button>
                   )}
                 </li>
@@ -212,9 +216,7 @@ export default function ManualsModal({ open, onClose }: ManualsModalProps) {
         </div>
 
         <p className="text-[11px] text-white/40 text-center mt-8 leading-relaxed">
-          Recomendações de instalação, bitola de cabo e instruções de segurança
-          estão descritas em cada manual.
-          Siga sempre os limites elétricos do produto.
+          {t.footer}
         </p>
       </div>
     </div>
