@@ -139,7 +139,8 @@
     },
     "specsTitle": "Technical specifications",
     "buyButton": "Where to buy",
-    "manualButton": "Manual (PDF)"
+    "manualButton": "Manual (PDF)",
+    "calculatorButton": "Consumption / Generator Calculate"
   },
   "aboutPage": {
     "heroKicker": "SOUNDMAX AUDIO PARTS",
@@ -178,6 +179,12 @@
     "title": "Support & Service",
     "subtitle": "Download manuals, open a ticket or find an authorized service center.",
 
+    "calculator": {
+      "title": "Calculator",
+      "text": "Estimate current draw, generator kVA and installer recommendations.",
+      "button": "Calculate"
+    },
+
     "manuals": {
       "title": "Manuals",
       "text": "Official PDFs by series and model.",
@@ -202,6 +209,57 @@
       "text": "Authorized service network with warranty coverage.",
       "button": "Find service center"
     }
+  },
+  "calculatorPage": {
+    "title": "Power / Generator Calculator",
+    "subtitle": "Use presets (K6/K9/K25/K50) or adjust values manually.",
+    "backToSupport": "Back to Support"
+  },
+  "calculatorWidget": {
+    "calculator": "Calculator",
+    "inputsTitle": "Inputs",
+    "inputsSubtitle": "Set values and see generator kVA and recommendations.",
+    "modeLabel": "Calculator Mode",
+    "modeCustomer": "Customer",
+    "modeInstaller": "Installer",
+    "musicPctLabel": "Musical average (% of continuous)",
+    "musicPct30": "30% (very dynamic)",
+    "musicPct40": "40% (typical music)",
+    "musicPct50": "50% (common average)",
+    "musicPct60": "60% (heavier use)",
+    "poutLabel": "Total RMS power supported by all transducers (W)",
+    "effLabel": "Efficiency (η)",
+    "v1Label": "Single-phase voltage (V)",
+    "vllLabel": "Three-phase line-to-line voltage (VLL)",
+    "pfLabel": "Load power factor (PF)",
+    "pfHint": "If unknown, keep 1.0.",
+    "ampLabel": "Amplifier",
+    "pmaxLabel": "Amplifier max power (W RMS)",
+    "installerNote": "Breakers follow the manual preset. Cables follow the musical/short mode.",
+    "genPfLabel": "Generator power factor (for kVA)",
+    "headroomLabel": "Generator headroom (e.g., 1.20 = +20%)",
+
+    "musicTitle": "Musical average consumption",
+    "musicMono": "1φ (A)",
+    "musicTri": "3φ per phase (A)",
+    "rangeMono": "Typical 30–60% (1φ)",
+    "rangeTri": "Typical 30–60% (3φ)",
+    "contTitle": "Continuous consumption (test)",
+    "contMono": "1φ (A)",
+    "contTri": "3φ per phase (A)",
+    "genTitle": "Suggested generator (total kVA)",
+    "genRange": "Typical 30–60%",
+    "genMusic": "Musical kVA",
+    "genMax": "Max kVA",
+    "genInterval": "Range (min→max)",
+
+    "instTitle": "Cables and breakers (manual)",
+    "instMono": "Single-phase",
+    "instTri": "Three-phase (per phase)",
+    "instAvgCurrent": "Average current",
+    "instBreaker": "Breaker",
+    "instCable": "Cable (avg)",
+    "instFootnote": "Note: recommendations for musical use + short cables. For code-compliant sizing, consult an electrician."
   },
   "manualsModal": {
     "title": "Technical manuals (PDF)",

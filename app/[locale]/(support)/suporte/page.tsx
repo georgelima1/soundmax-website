@@ -3,6 +3,7 @@
 import { useState } from "react";
 import SupportTicketModal from "@/components/supportTicketModal";
 import ManualsModal from "@/components/manualModal";
+import Link from "next/link";
 
 import ptMessages from "@/messages/pt.json";
 import enMessages from "@/messages/en.json";
@@ -49,6 +50,22 @@ export default function SuportePage({
           >
             {t.manuals.button}
           </button>
+        </div>
+        {/* CALCULADORA */}
+        <div className="card p-6 flex flex-col h-full">
+          <h3 className="text-lg font-semibold">
+            {t.calculator.title}
+          </h3>
+          <p className="text-white/70 mt-2 text-sm">
+            {t.calculator.text}
+          </p>
+
+          <Link
+            className="btn btn-primary mt-auto inline-flex justify-center"
+            href={`/${locale}/calculadora`}
+          >
+            {t.calculator.button}
+          </Link>
         </div>
 
         {/* ATENDIMENTO IMEDIATO / WHATSAPP */}

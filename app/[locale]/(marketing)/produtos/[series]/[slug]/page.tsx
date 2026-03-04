@@ -715,6 +715,12 @@ export default function ProductPage({
           >
             {t.buyButton}
           </Link>
+          <Link
+            href={`/${locale}/calculadora?amp=${product.slug}`}
+            className="btn btn-primary w-full text-center"
+          >
+            {t.calculatorButton}
+          </Link>
           {product.manual ? (
             <a
               href={product.manual}

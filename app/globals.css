@@ -17,3 +17,13 @@ body { @apply bg-bg text-white; }
 .badge { @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-white/10; }
 
 header.sticky { backdrop-filter: saturate(180%) blur(8px); background: rgba(10,10,11,0.6); border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+/* melhora em alguns browsers, não em todos */
+select option {
+    background-color: #0b0b10;
+    color: #ffffff;
+  }
+  select optgroup {
+    background-color: #0b0b10;
+    color: #ffffff;
+  }
