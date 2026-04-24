@@ -140,7 +140,7 @@
     "specsTitle": "Technical specifications",
     "buyButton": "Where to buy",
     "manualButton": "Manual (PDF)",
-    "calculatorButton": "Consumption / Generator Calculate"
+    "calculatorButton": "Generator / Consumption Calculate"
   },
   "aboutPage": {
     "heroKicker": "SOUNDMAX AUDIO PARTS",
@@ -212,14 +212,14 @@
   },
   "calculatorPage": {
     "title": "Power / Generator Calculator",
-    "subtitle": "Use presets (K6/K9/K25/K50) or adjust values manually.",
+    "subtitle": "Calculate the power consumption and the recommended generator for amplifiers in the K and K Pro series.",
     "backToSupport": "Back to Support"
   },
   "calculatorWidget": {
     "calculator": "Calculator",
-    "inputsTitle": "Inputs",
-    "inputsSubtitle": "Set values and see generator kVA and recommendations.",
-    "modeLabel": "Calculator Mode",
+    "inputsTitle": "Fill in the “Total RMS Power Supported” field as instructed:",
+    "inputsSubtitle": "Example: For a system with 4 1500W RMS woofers + 8 400W RMS mid-woofers + 16 100W RMS drivers, enter: 4x1500+8x400+16x100",
+    "modeLabel": "Calculator Mode (In Installer Mode, you will find information about the wire gauge and circuit breakers to be used)",
     "modeCustomer": "Customer",
     "modeInstaller": "Installer",
     "musicPctLabel": "Musical average (% of continuous)",
@@ -235,7 +235,6 @@
     "pfHint": "If unknown, keep 1.0.",
     "ampLabel": "Amplifier",
     "pmaxLabel": "Amplifier max power (W RMS)",
-    "installerNote": "Breakers follow the manual preset. Cables follow the musical/short mode.",
     "genPfLabel": "Generator power factor (for kVA)",
     "headroomLabel": "Generator headroom (e.g., 1.20 = +20%)",
 
@@ -253,13 +252,17 @@
     "genMax": "Max kVA",
     "genInterval": "Range (min→max)",
 
-    "instTitle": "Cables and breakers (manual)",
+    "instTitle": "Cables and Circuit Breakers (per Amplifier)",
     "instMono": "Single-phase",
     "instTri": "Three-phase (per phase)",
-    "instAvgCurrent": "Average current",
+    "instAvgCurrent": "Average stream (based on average music consumption)",
     "instBreaker": "Breaker",
     "instCable": "Cable (avg)",
-    "instFootnote": "Note: recommendations for musical use + short cables. For code-compliant sizing, consult an electrician."
+    "instFootnote": "Note: recommendations for musical use + short cables. For code-compliant sizing, consult an electrician.",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "advancedTitle": "Advanced settings",
+    "selectAmpPlaceholder": "Select model"
   },
   "manualsModal": {
     "title": "Technical manuals (PDF)",

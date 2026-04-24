@@ -140,7 +140,7 @@
     "specsTitle": "Especificações técnicas",
     "buyButton": "Onde comprar",
     "manualButton": "Manual (PDF)",
-    "calculatorButton": "Calcular Consumo / Gerador"
+    "calculatorButton": "Calcular Gerador / Consumo"
   },
   "aboutPage": {
     "heroKicker": "SOUNDMAX AUDIO PARTS",
@@ -211,15 +211,15 @@
     }
   },
   "calculatorPage": {
-    "title": "Calculadora de Consumo / Gerador",
-    "subtitle": "Calcule o consumo elétrico e o gerador recomendado para amplificadores das linhas K e K Pro.",
+    "title": "Calculadora de Gerador / Consumo",
+    "subtitle": "Calcule o gerador recomendado e o consumo médio para amplificadores das linhas K e K Pro.",
     "backToSupport": "Voltar para Suporte"
   },
   "calculatorWidget": {
     "calculator": "Calculadora",
-    "inputsTitle": "Você basicamente só precisará somar a potencia em RMS suportada por todos os transdutores que irão ser usados nos amplificadores da Linha K ou K Pro. No modo Instalador da Calculadora, você encontrará informacoes sobre Bitola de Cabos e Disjuntores a serem utilizados.",
-    "inputsSubtitle": " Ex: 4 Alto Falantes de Grave que suportam 2000W RMS + 4 Alto falantes de Médio-Grave que suportam 400W RMS, totalizando 4x2000 + 4x400 = 9600.",
-    "modeLabel": "Modo da Calculadora",
+    "inputsTitle": "Preencha o campo \"Potência RMS total suportada\" conforme orientação:",
+    "inputsSubtitle": "Ex: Para um sistema com 4 graves 1500W RMS + 8 médio-grave 400W RMS + 16 drivers 100W RMS, preencher: 4x1500+8x400+16x100",
+    "modeLabel": "Modo da Calculadora (No modo Instalador, você encontrará informacoes sobre Bitola de Cabos e Disjuntores a serem utilizados)",
     "modeCustomer": "Consumidor",
     "modeInstaller": "Instalador",
     "musicPctLabel": "Consumo médio musical (% do contínuo)",
@@ -227,7 +227,7 @@
     "musicPct40": "40% (musical padrão)",
     "musicPct50": "50% (médio típico)",
     "musicPct60": "60% (mais puxado)",
-    "poutLabel": "Somatório da Potência RMS suportada por todos os transdutores",
+    "poutLabel": "Potência RMS total suportada",
     "effLabel": "Eficiência (η)",
     "v1Label": "Tensão monofásica (V)",
     "vllLabel": "Tensão trifásica linha-linha (VLL)",
@@ -235,7 +235,6 @@
     "pfHint": "Se não souber, deixe 1,0.",
     "ampLabel": "Amplificador",
     "pmaxLabel": "Potência máxima do amplificador (W RMS)",
-    "installerNote": "Disjuntores seguem o preset do manual. Cabos seguem o modo musical/curto.",
     "genPfLabel": "Fator de potência do gerador (para kVA)",
     "headroomLabel": "Margem de sobra do gerador (ex.: 1,20 = +20%)",
 
@@ -253,13 +252,17 @@
     "genMax": "kVA máximo",
     "genInterval": "Intervalo (mín→máx)",
 
-    "instTitle": "Cabos e disjuntores (manual)",
+    "instTitle": "Cabos e Disjuntores (por Amplificador)",
     "instMono": "Monofásico",
     "instTri": "Trifásico (por fase)",
-    "instAvgCurrent": "Corrente média",
+    "instAvgCurrent": "Corrente média (com base no Consumo médio musical)",
     "instBreaker": "Disjuntor",
     "instCable": "Cabo (médio)",
-    "instFootnote": "Obs.: recomendações pensadas para uso musical + cabos até 2m. Para cabos mais longos, considerar aumentar a bitola sugerida."
+    "instFootnote": "Obs.: recomendações pensadas para uso musical + cabos até 2m. Para cabos mais longos, considerar aumentar a bitola sugerida.",
+    "showMore": "Mostrar mais",
+    "showLess": "Mostrar menos",
+    "advancedTitle": "Configurações avançadas",
+    "selectAmpPlaceholder": "Selecione o modelo"
   },
   "manualsModal": {
     "title": "Manuais técnicos (PDF)",
