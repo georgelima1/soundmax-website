@@ -13,7 +13,7 @@ type AmpSelection = AmpKey | '';
 const SIZES_MM2 = [2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120, 150, 185, 240];
 
 const AMP_PRESETS: Record<
-  AmpSelection,
+  AmpKey,
   { name: string; pmax: number; breaker: [number, number] }
 > = {
   k6: { name: 'K6', pmax: 6000, breaker: [32, 16] },
@@ -22,7 +22,7 @@ const AMP_PRESETS: Record<
   k50: { name: 'K50', pmax: 50000, breaker: [125, 100] }
 };
 
-function parseAmpKeyFromSlug(raw: string | null | undefined): AmpKey {
+function parseAmpKeyFromSlug(raw: string | null | undefined): AmpSelection {
   const v = (raw || '').toLowerCase().trim();
   if (v.startsWith('k6')) return 'k6';
   if (v.startsWith('k9')) return 'k9';
@@ -196,7 +196,7 @@ export default function CalculatorWidget({
   const messages = locale === 'en' ? enMessages : ptMessages;
   const t = (messages as any).calculatorWidget;
 
-  const initialAmpKey = useMemo<AmpKey>(
+  const initialAmpKey = useMemo<AmpSelection>(
     () => parseAmpKeyFromSlug(initialAmpSlug),
     [initialAmpSlug]
   );
