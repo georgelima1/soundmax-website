@@ -7,7 +7,7 @@ import en from "@/messages/en.json";
 type Product = {
   name: string;
   slug: string;
-  series: "kseries" | "kproseries | nexusseries";
+  series: "kseries" | "kproseries" | "nexusseries";
   img: string;
   power?: string;
   channels?: string;
