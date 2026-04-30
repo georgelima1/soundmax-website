@@ -116,7 +116,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D5.0",
         slug: "D5-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "5000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
@@ -127,7 +127,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D10.0",
         slug: "D10-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "10000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
@@ -138,7 +138,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D15.0",
         slug: "D15-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "15000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
@@ -149,7 +149,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D20.0",
         slug: "D20-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "20000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
@@ -252,7 +252,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D5.0",
         slug: "D5-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "5000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
@@ -263,7 +263,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D10.0",
         slug: "D10-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "10000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
@@ -274,7 +274,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D15.0",
         slug: "D15-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "15000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
@@ -285,7 +285,7 @@ const PRODUCTS_BY_LOCALE: Record<
       {
         name: "D20.0",
         slug: "D20-0",
-        series: "nexusserie",
+        series: "nexusseries",
         power: "20000W RMS",
         ohms: "2Ω",
         channels: "2 CH",
