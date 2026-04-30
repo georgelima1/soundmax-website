@@ -14,6 +14,7 @@ type SeriesId = "kseries" | "kproseries";
 type Prod = {
   slug: string;
   series: SeriesId;
+  segment: string;
   name: string;
   hero: string;
   gallery: string[];
@@ -30,6 +31,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   "k6-0": {
     slug: "k6-0",
     series: "kseries",
+    segment: "automotivo",
     name: "K6.0",
     hero: "/images/produtos/k/k6.jpg",
     gallery: [
@@ -64,6 +66,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   "k9-0": {
     slug: "k9-0",
     series: "kseries",
+    segment: "automotivo",
     name: "K9.0",
     hero: "/images/produtos/k/k9.jpg",
     gallery: [
@@ -98,6 +101,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   "k25-0": {
     slug: "k25-0",
     series: "kseries",
+    segment: "automotivo",
     name: "K25",
     hero: "/images/produtos/k/k25.jpg",
     gallery: [
@@ -132,6 +136,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   "k50-0": {
     slug: "k50-0",
     series: "kseries",
+    segment: "automotivo",
     name: "K50",
     hero: "/images/produtos/k/k50.jpg",
     gallery: [
@@ -166,6 +171,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   "k5-0pro": {
     slug: "k5-0pro",
     series: "kproseries",
+    segment: "pro-audio",
     name: "K5 Pro HD",
     hero: "/images/produtos/kpro/k5pro.jpg",
     gallery: [
@@ -198,6 +204,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   "k9-0pro": {
     slug: "k9-0pro",
     series: "kproseries",
+    segment: "pro-audio",
     name: "K9 Pro HD",
     hero: "/images/produtos/kpro/k9pro.jpg",
     gallery: [
@@ -229,6 +236,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   },
   "k18-0pro": {
     slug: "k18-0pro",
+    segment: "pro-audio",
     series: "kproseries",
     name: "K18 Pro",
     hero: "/images/produtos/kpro/k18pro.jpg",
@@ -261,6 +269,7 @@ const PRODUCTS_PT: Record<string, Prod> = {
   },
   "k25-0pro": {
     slug: "k25-0pro",
+    segment: "pro-audio",
     series: "kproseries",
     name: "K25 Pro",
     hero: "/images/produtos/kpro/k25pro.jpg",
@@ -336,6 +345,7 @@ const PRODUCTS_EN: Record<string, Prod> = {
   "k9-0": {
     "slug": "k9-0",
     "series": "kseries",
+    "segment": "automotive",
     "name": "K9.0",
     "hero": "/images/produtos/k/k9.jpg",
     "gallery": ["/images/produtos/k/k9.jpg", "/images/produtos/k/k9-2.jpg", "/images/produtos/k/k9-3.jpg", "/images/produtos/k/k9-4.jpg"],
@@ -364,6 +374,7 @@ const PRODUCTS_EN: Record<string, Prod> = {
   "k25-0": {
     "slug": "k25-0",
     "series": "kseries",
+    "segment": "automotive",
     "name": "K25",
     "hero": "/images/produtos/k/k25.jpg",
     "gallery": ["/images/produtos/k/k25.jpg", "/images/produtos/k/k25-2.jpg", "/images/produtos/k/k25-3.jpg", "/images/produtos/k/k25-4.jpg"],
@@ -392,6 +403,7 @@ const PRODUCTS_EN: Record<string, Prod> = {
   "k50-0": {
     "slug": "k50-0",
     "series": "kseries",
+    "segment": "automotive",
     "name": "K50",
     "hero": "/images/produtos/k/k50.jpg",
     "gallery": ["/images/produtos/k/k50.jpg", "/images/produtos/k/k50-2.jpg", "/images/produtos/k/k50-3.jpg", "/images/produtos/k/k50-4.jpg"],
@@ -420,6 +432,7 @@ const PRODUCTS_EN: Record<string, Prod> = {
   "k5-0pro": {
     "slug": "k5-0pro",
     "series": "kproseries",
+    "segment": "pro-audio",
     "name": "K5 Pro HD",
     "hero": "/images/produtos/kpro/k5pro.jpg",
     "gallery": ["/images/produtos/kpro/k5pro.jpg", "/images/produtos/kpro/k5pro-2.jpg"],
@@ -449,6 +462,7 @@ const PRODUCTS_EN: Record<string, Prod> = {
   "k9-0pro": {
     "slug": "k9-0pro",
     "series": "kproseries",
+    "segment": "pro-audio",
     "name": "K9 Pro HD",
     "hero": "/images/produtos/kpro/k9pro.jpg",
     "gallery": ["/images/produtos/kpro/k9pro.jpg", "/images/produtos/kpro/k9pro-2.jpg"],
@@ -478,6 +492,7 @@ const PRODUCTS_EN: Record<string, Prod> = {
   "k18-0pro": {
     "slug": "k18-0pro",
     "series": "kproseries",
+    "segment": "pro-audio",
     "name": "K18 Pro",
     "hero": "/images/produtos/kpro/k18pro.jpg",
     "gallery": ["/images/produtos/kpro/k18pro.jpg", "/images/produtos/kpro/k18pro-2.jpg"],
@@ -507,6 +522,7 @@ const PRODUCTS_EN: Record<string, Prod> = {
   "k25-0pro": {
     "slug": "k25-0pro",
     "series": "kproseries",
+    "segment": "pro-audio",
     "name": "K25 Pro",
     "hero": "/images/produtos/kpro/k25pro.jpg",
     "gallery": ["/images/produtos/kpro/k25pro.jpg", "/images/produtos/kpro/k25pro-2.jpg"],

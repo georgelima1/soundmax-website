@@ -28,9 +28,23 @@ export function SiteHeader({ locale }: { locale: string }) {
     { href: "contato", label: m.contact }
   ];
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // Caminho atual, ex: "/pt/contato", "/en/produtos/xyz"
   const pathname = usePathname();
-  const segments = pathname.split("/").filter(Boolean); // ["pt","contato"]
+  const segments = pathname.split("/").filter(Boolean);
+
+  const isSegmentChooser = segments.length === 1;
+
+  if (isSegmentChooser) return null;
+
+  const currentSegment = segments[1] === "pro-audio" ? "pro-audio" : "automotivo";
+  const segmentBase = `/${locale}/${currentSegment}`;
 
   const buildLangUrl = (lang: "pt" | "en") => {
     // se não tiver segmento (teoricamente só "/"), vai pra home do lang
@@ -39,18 +53,11 @@ export function SiteHeader({ locale }: { locale: string }) {
     return "/" + [lang, ...rest].join("/");
   };
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <header className={`sticky top-0 z-50 ${scrolled ? "bg-black/80 backdrop-blur-md" : ""}`}>
       <div className="container-wrap flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href={`/${locale}`} className="inline-flex items-center" aria-label="Voltar para a Home">
+        <Link href={segmentBase} className="inline-flex items-center" aria-label="Voltar para a Home">
           <div className="relative w-56 h-8">
             <Image
               src="/logos/logo-transp-preto.png"
@@ -68,13 +75,21 @@ export function SiteHeader({ locale }: { locale: string }) {
           {nav.map((n) => (
             <Link
               key={n.href}
-              href={`/${locale}/${n.href}`}
+              href={n.href ? `${segmentBase}/${n.href}` : segmentBase}
               className="text-sm text-white/80 hover:text-white"
               onClick={() => setMenuOpen(false)}
             >
               {n.label}
             </Link>
           ))}
+
+          <Link
+            href={`/${locale}`}
+            onClick={() => localStorage.removeItem("soundmax.segment")}
+            className="text-xs text-white/50 hover:text-white underline underline-offset-4"
+          >
+            {currentSegment === "pro-audio" ? "Pro Audio" : "Automotivo"} / Trocar
+          </Link>
 
           {/* PT | EN */}
           <div className="ml-6 flex gap-2 text-white text-sm font-semibold">
@@ -110,13 +125,24 @@ export function SiteHeader({ locale }: { locale: string }) {
           {nav.map((n) => (
             <Link
               key={n.href}
-              href={`/${locale}/${n.href}`}
+              href={n.href ? `${segmentBase}/${n.href}` : segmentBase}
               className="text-lg hover:text-gray-300"
               onClick={() => setMenuOpen(false)}
             >
               {n.label}
             </Link>
           ))}
+
+          <Link
+            href={`/${locale}`}
+            onClick={() => {
+              localStorage.removeItem("soundmax.segment");
+              setMenuOpen(false);
+            }}
+            className="text-sm text-white/60 hover:text-white underline underline-offset-4"
+          >
+            {currentSegment === "pro-audio" ? "Pro Audio" : "Automotivo"} / Trocar
+          </Link>
 
           {/* PT | EN no mobile */}
           <div className="flex gap-3 text-lg mt-4">

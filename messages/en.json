@@ -317,5 +317,17 @@
       "errorRequired": "Fill in the required fields. WhatsApp or email is mandatory.",
       "success": "Done! Just attach the photos in the WhatsApp chat 👍"
     }
+  },
+  "segmentHome": {
+    "chooseSegment": "Choose a segment",
+    "automotive": {
+      "title": "Soundmax Automotive",
+      "subtitle": "Amplifiers for car audio, outdoor systems and high-power setups."
+    },
+    "proAudio": {
+      "title": "Soundmax Pro Audio",
+      "subtitle": "Professional audio solutions for installations and large systems."
+    },
+    "viewAllProducts": "View all products"
   }
 }

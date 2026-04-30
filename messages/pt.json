@@ -8,7 +8,64 @@
     "contact": "Contato"
   },
   "button.products": "Ver produtos",
-  "home": {
+  "automotiveHome": {
+    "hero": {
+      "badge": "NOVO • Série K Pro",
+      "title": {
+        "line1": "Potência e sonoridade",
+        "line2": "para qualquer evento"
+      },
+      "subtitle": "Amplificadores com DSP integrado, proteção inteligente, eficiência elevada e design compacto. Projetados para performance extrema em som profissional.",
+      "cta": {
+        "products": "Ver produtos",
+        "video": "Assistir vídeo"
+      },
+      "bullets": {
+        "power": "≈ +30% de potência",
+        "protection": "Proteções inteligentes",
+        "dsp": "DSP integrado"
+      }
+    },
+    "logos": {
+      "subtitle": "Marcas e eventos onde nossos amplificadores já estiveram"
+    },
+    "series": {
+      "title": "Nossas séries",
+      "subtitle": "Escolha a linha ideal para o seu projeto.",
+      "k": {
+        "name": "Série K",
+        "desc": "Alta potência para o dia a dia"
+      },
+      "kpro": {
+        "name": "Série K Pro",
+        "desc": "Hi-end para audição crítica."
+      },
+      "bob": {
+        "name": "Série BOB",
+        "desc": "4 canais com muita versatilidade."
+      }
+    },
+    "features": {
+      "efficiency": {
+        "title": "+ Eficiência",
+        "desc": "Arquitetura de saída otimizada para máximo SPL com baixa distorção."
+      },
+      "protection": {
+        "title": "Proteções",
+        "desc": "Sobretensão, temperatura, curto e sobrecarga com recuperação automática."
+      },
+      "support": {
+        "title": "Garantia & Suporte",
+        "desc": "Rede de assistência técnica e garantia oficial no Brasil."
+      }
+    },
+    "cta": {
+      "title": "Precisa de ajuda para escolher?",
+      "subtitle": "Fale com nosso time técnico e receba uma indicação sob medida.",
+      "button": "Fale conosco"
+    }
+  },
+  "proAudioHome": {
     "hero": {
       "badge": "NOVO • Série K Pro",
       "title": {
@@ -317,5 +374,17 @@
       "errorRequired": "Preencha os campos obrigatórios. WhatsApp ou e-mail é obrigatório.",
       "success": "Pronto! É só anexar as fotos lá no WhatsApp 👍"
     }
+  },
+  "segmentHome": {
+    "chooseSegment": "Escolha um segmento",
+    "automotive": {
+      "title": "Soundmax Automotivo",
+      "subtitle": "Amplificadores para som automotivo, paredões, carretas e caminhões."
+    },
+    "proAudio": {
+      "title": "Soundmax Pro Audio",
+      "subtitle": "Soluções profissionais para áudio, instalações e grandes sistemas."
+    },
+    "viewAllProducts": "Ver todos os produtos"
   }
 }
