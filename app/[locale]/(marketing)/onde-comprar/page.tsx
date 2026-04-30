@@ -2,70 +2,61 @@ export default function OndeComprarPage() {
   const revendedoresPorEstado = {
     CE: [
       {
-        cidade: "Fortaleza",
-        telefone: "(85) 3017-4611",
+        cidade: "ArtSom: Fortaleza",
+        telefone: "(85) 99912-2421",
         whatsappLink:
-          "https://wa.me/558530174611?text=Ol%C3%A1%2C+tenho+interesse+em+comprar+SoundMax+em+Fortaleza",
+          "https://wa.me/5585999122421?text=Ol%C3%A1%2C+tenho+interesse+em+comprar+SoundMax+em+Fortaleza",
       },
       {
-        cidade: "Caucaia",
-        telefone: "(85) 98872-7964",
+        cidade: "Dourados Som: Fortaleza",
+        telefone: "(85) 99609-2098",
         whatsappLink:
-          "https://wa.me/5585988727964?text=Ol%C3%A1%2C+gostaria+de+distribui%C3%A7%C3%A3o+SoundMax+na+regi%C3%A3o+metropolitana",
+          "https://wa.me/5585996092098?text=Ol%C3%A1%2C+tenho+interesse+em+comprar+SoundMax+em+Fortaleza",
+      },
+      {
+        cidade: "KurtSom: Fortaleza",
+        telefone: "(85) 98792-9628",
+        whatsappLink:
+          "https://wa.me/5585987929628?text=Ol%C3%A1%2C+tenho+interesse+em+comprar+SoundMax+em+Fortaleza",
+      },
+      {
+        cidade: "M&S Som Automotivo",
+        telefone: "(85) 98867-0935",
+        whatsappLink:
+          "https://wa.me/5585988670935?text=Ol%C3%A1%2C+tenho+interesse+em+comprar+SoundMax+em+Fortaleza",
       },
     ],
 
     PE: [
       {
-        cidade: "Recife",
-        telefone: "(81) 98811-2244",
+        cidade: "Waltinho Equipadora: Recife",
+        telefone: "(81) 98862-8070",
         whatsappLink:
-          "https://wa.me/5581988112244?text=Quero+informa%C3%A7%C3%B5es+de+pre%C3%A7o+e+disponibilidade+SoundMax+no+Recife",
-      },
-    ],
-
-    RN: [
-      {
-        cidade: "Natal",
-        telefone: "(84) 98745-3322",
-        whatsappLink:
-          "https://wa.me/5584987453322?text=Tenho+interesse+nos+amplificadores+S%C3%A9rie+K+em+Natal",
+          "https://wa.me/5581988628070?text=Quero+informa%C3%A7%C3%B5es+de+pre%C3%A7o+e+disponibilidade+SoundMax+no+Recife",
       },
     ],
 
     PB: [
       {
-        cidade: "João Pessoa",
+        cidade: "Gardel Som Automotivo: João Pessoa",
         telefone: "(83) 98650-1199",
         whatsappLink:
           "https://wa.me/5583986501199?text=Voc%C3%AAs+vendem+linha+K+Pro+em+Jo%C3%A3o+Pessoa%3F",
       },
-    ],
-
-    AL: [
       {
-        cidade: "Maceió",
-        telefone: "(82) 98820-4477",
+        cidade: "Lula Sound: Sapé",
+        telefone: "(83) 99111-4668",
         whatsappLink:
-          "https://wa.me/5582988204477?text=Quero+saber+onde+comprar+SoundMax+em+Macei%C3%B3",
+          "https://wa.me/5583991114668?text=Voc%C3%AAs+vendem+linha+K+Pro+em+Jo%C3%A3o+Pessoa%3F",
       },
     ],
 
     BA: [
       {
-        cidade: "Salvador",
-        telefone: "(71) 98700-5533",
+        cidade: "AGN Representações: Feira de Santana",
+        telefone: "(75) 98105-1220",
         whatsappLink:
-          "https://wa.me/5571987005533?text=Procuro+revenda+SoundMax+na+Bahia",
-      },
-    ],
-
-    SP: [
-      {
-        cidade: "São Paulo (capital)",
-        telefone: "(11) 99410-8822",
-        whatsappLink:
-          "https://wa.me/5511994108822?text=Voc%C3%AAs+entregam+SoundMax+em+S%C3%A3o+Paulo%3F",
+          "https://wa.me/5575981051220?text=Procuro+revenda+SoundMax+na+Bahia",
       },
     ],
   } as const;
