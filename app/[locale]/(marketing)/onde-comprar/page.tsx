@@ -1,5 +1,14 @@
 export default function OndeComprarPage() {
   const revendedoresPorEstado = {
+    BA: [
+      {
+        cidade: "AGN Representações: Feira de Santana",
+        telefone: "(75) 98105-1220",
+        whatsappLink:
+          "https://wa.me/5575981051220?text=Procuro+revenda+SoundMax+na+Bahia",
+      },
+    ],
+
     CE: [
       {
         cidade: "ArtSom: Fortaleza",
@@ -25,6 +34,21 @@ export default function OndeComprarPage() {
         whatsappLink:
           "https://wa.me/5585988670935?text=Ol%C3%A1%2C+tenho+interesse+em+comprar+SoundMax+em+Fortaleza",
       },
+      {
+        cidade: "Universo Acessórios",
+        telefone: "(85) 3281-4241",
+        whatsappLink:
+          "https://wa.me/5585996510840?text=Ol%C3%A1%2C+tenho+interesse+em+comprar+SoundMax+em+Fortaleza",
+      },
+    ],
+
+    MA: [
+      {
+        cidade: "Nilton: São Luiz",
+        telefone: "(98) 98447-5000",
+        whatsappLink:
+          "https://wa.me/5598984475000?text=Procuro+revenda+SoundMax+na+Bahia",
+      },
     ],
 
     PE: [
@@ -48,15 +72,6 @@ export default function OndeComprarPage() {
         telefone: "(83) 99111-4668",
         whatsappLink:
           "https://wa.me/5583991114668?text=Voc%C3%AAs+vendem+linha+K+Pro+em+Jo%C3%A3o+Pessoa%3F",
-      },
-    ],
-
-    BA: [
-      {
-        cidade: "AGN Representações: Feira de Santana",
-        telefone: "(75) 98105-1220",
-        whatsappLink:
-          "https://wa.me/5575981051220?text=Procuro+revenda+SoundMax+na+Bahia",
       },
     ],
   } as const;
