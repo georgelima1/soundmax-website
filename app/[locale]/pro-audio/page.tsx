@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, PlayCircle, Speaker, ShieldCheck, Rocket } from "lucide-react";
 import VideoLightbox from "@/components/videolightbox";
+import { useSegment } from "@/hooks/useSegment";
 
 import pt from "@/messages/pt.json";
 import en from "@/messages/en.json";
@@ -20,6 +21,12 @@ export default function ProAudioPage({
 
   const messages = dict[locale] ?? dict["pt"];
   const t = messages.proAudioHome;
+  const {
+    currentSegment,
+    segmentBase,
+    segmentTheme,
+    segments
+  } = useSegment(locale);
 
   const series = [
     {
@@ -54,7 +61,10 @@ export default function ProAudioPage({
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,rgba(225,29,46,0.30),transparent)]" />
+      <div className="pointer-events-none absolute inset-0" style={{
+    background:
+      `radial-gradient(1200px 600px at 50% -20%, ${segmentTheme.glowColor}, transparent)`,
+  }} />
         <div className="container-wrap section">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
@@ -171,7 +181,7 @@ export default function ProAudioPage({
             <h3 className="text-2xl font-semibold">{t.cta.title}</h3>
             <p className="text-white/70 mt-2">{t.cta.subtitle}</p>
           </div>
-          <Link href={`/${locale}/contato`} className="btn btn-primary">
+          <Link href={`/${locale}/contato`} className={`btn ${segmentTheme.classes.button}`}>
             {t.cta.button}
           </Link>
         </div>

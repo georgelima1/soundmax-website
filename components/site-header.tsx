@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useSegment } from "@/hooks/useSegment";
 
 // importa traduções
 import pt from "@/messages/pt.json";
@@ -37,14 +38,15 @@ export function SiteHeader({ locale }: { locale: string }) {
 
   // Caminho atual, ex: "/pt/contato", "/en/produtos/xyz"
   const pathname = usePathname();
-  const segments = pathname.split("/").filter(Boolean);
-
-  const isSegmentChooser = segments.length === 1;
+  const {
+    currentSegment,
+    segmentBase,
+    segmentTheme,
+    segments,
+    isSegmentChooser
+  } = useSegment(locale);
 
   if (isSegmentChooser) return null;
-
-  const currentSegment = segments[1] === "pro-audio" ? "pro-audio" : "automotivo";
-  const segmentBase = `/${locale}/${currentSegment}`;
 
   const buildLangUrl = (lang: "pt" | "en") => {
     // se não tiver segmento (teoricamente só "/"), vai pra home do lang
@@ -60,7 +62,7 @@ export function SiteHeader({ locale }: { locale: string }) {
         <Link href={segmentBase} className="inline-flex items-center" aria-label="Voltar para a Home">
           <div className="relative w-56 h-8">
             <Image
-              src="/logos/logo-transp-preto.png"
+              src={`${segmentTheme.logo}`}
               alt="Soundmax"
               fill
               className="object-contain"

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, PlayCircle, Speaker, ShieldCheck, Rocket } from "lucide-react";
 import VideoLightbox from "@/components/videolightbox";
-import { getSegmentTheme } from "../../lib/segments";
+import { useSegment } from "@/hooks/useSegment";
 
 import pt from "@/messages/pt.json";
 import en from "@/messages/en.json";
@@ -21,7 +21,12 @@ export default function AutomotivePage({
 
   const messages = dict[locale] ?? dict["pt"];
   const t = messages.automotiveHome;
-  const segmentTheme = getSegmentTheme("automotivo");
+  const {
+    currentSegment,
+    segmentBase,
+    segmentTheme,
+    segments
+  } = useSegment(locale);
 
   const series = [
     {
@@ -56,11 +61,16 @@ export default function AutomotivePage({
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className={`pointer-events-none absolute inset-0 ${segmentTheme.classes.gradient}`} />
+        <div className="pointer-events-none absolute inset-0" style={{
+          background:
+            `radial-gradient(1200px 600px at 50% -20%, ${segmentTheme.glowColor}, transparent)`,
+        }} />
         <div className="container-wrap section">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <span className="badge">{t.hero.badge}</span>
+              <span className={`badge ${segmentTheme.classes.buttonSoft}`}>
+                {t.hero.badge}
+              </span>
               <h1 className="text-4xl md:text-5xl font-extrabold mt-4 leading-tight">
                 {t.hero.title.line1}
                 <br />
@@ -69,7 +79,7 @@ export default function AutomotivePage({
               <p className="text-white/70 mt-4 max-w-xl">{t.hero.subtitle}</p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href={`/${locale}/produtos?segment=automotivo`}
+                  href={`/${locale}/${currentSegment}/produtos`}
                   className={`btn ${segmentTheme.classes.button}`}
                 >
                   {t.hero.cta.products}
@@ -176,7 +186,7 @@ export default function AutomotivePage({
             <h3 className="text-2xl font-semibold">{t.cta.title}</h3>
             <p className="text-white/70 mt-2">{t.cta.subtitle}</p>
           </div>
-          <Link href={`/${locale}/contato`} className="btn btn-primary">
+          <Link href={`/${locale}/contato`} className={`btn ${segmentTheme.classes.button}`}>
             {t.cta.button}
           </Link>
         </div>

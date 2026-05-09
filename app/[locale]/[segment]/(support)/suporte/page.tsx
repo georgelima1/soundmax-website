@@ -10,10 +10,19 @@ import enMessages from "@/messages/en.json";
 
 type Locale = "pt" | "en";
 
+export function generateStaticParams() {
+  return [
+    { locale: "pt", segment: "automotivo" },
+    { locale: "pt", segment: "pro-audio" },
+    { locale: "en", segment: "automotivo" },
+    { locale: "en", segment: "pro-audio" },
+  ];
+}
+
 export default function SuportePage({
   params,
 }: {
-  params: { locale: Locale };
+  params: { locale: Locale; segment: string };
 }) {
   const locale: Locale = params.locale === "en" ? "en" : "pt";
   const messages = locale === "en" ? enMessages : ptMessages;
@@ -110,7 +119,7 @@ export default function SuportePage({
           <p className="text-white/70 mt-2 text-sm">
             {t.assistance.text}
           </p>
-          <button className="btn btn-primary mt-auto inline-flex justify-center">
+          <button className={`btn ${segmentTheme.classes.button} mt-auto inline-flex justify-center`}>
             {t.assistance.button}
           </button>
         </div>

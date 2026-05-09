@@ -4,10 +4,19 @@ import enMessages from "@/messages/en.json";
 
 type Locale = "pt" | "en";
 
+export function generateStaticParams() {
+  return [
+    { locale: "pt", segment: "automotivo" },
+    { locale: "pt", segment: "pro-audio" },
+    { locale: "en", segment: "automotivo" },
+    { locale: "en", segment: "pro-audio" },
+  ];
+}
+
 export default function SobrePage({
   params,
 }: {
-  params: { locale: Locale };
+  params: { locale: Locale; segment: string };
 }) {
   const locale: Locale = params.locale === "en" ? "en" : "pt";
   const messages = locale === "en" ? enMessages : ptMessages;

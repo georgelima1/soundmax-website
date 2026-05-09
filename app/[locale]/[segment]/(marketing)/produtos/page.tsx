@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { generateLocaleSegmentStaticParams } from "@/lib/static-params";
+import { useSegment } from "@/hooks/useSegment";
+import type { Locale } from "@/lib/locales";
+import { type Segment, getSegmentTheme, isValidSegment } from "@/lib/segments";
+
+export const generateStaticParams = generateLocaleSegmentStaticParams;
 
 import pt from "@/messages/pt.json";
 import en from "@/messages/en.json";
@@ -15,8 +21,6 @@ type Product = {
   ohms?: string;
   manual?: string; // /manuals/arquivo.pdf ou URL externa
 };
-
-type Locale = "pt" | "en";
 
 /** ====== DADOS POR IDIOMA ====== */
 
@@ -227,16 +231,20 @@ const PRODUCTS_BY_LOCALE: Record<
 function ProductCard({
   p,
   locale,
-  t
+  t,
+  segment
 }: {
   p: Product;
   locale: Locale | string;
   t: any;
+  segment: Segment | string;
 }) {
+  const segmentTheme = getSegmentTheme(segment);
+  
   return (
     <div className="card overflow-hidden">
       <Link
-        href={`/${locale}/produtos/${p.series.toLowerCase()}/${p.slug.toLowerCase()}`}
+        href={`/${locale}/${segment}/produtos/${p.series.toLowerCase()}/${p.slug.toLowerCase()}`}
         className="block relative aspect-[4/3]"
         aria-label={`${t.details} ${p.name}`}
       >
@@ -253,7 +261,7 @@ function ProductCard({
         <div className="mt-4 flex gap-3">
           <Link
             href={`/${locale}/produtos/${p.series}/${p.slug}`}
-            className="btn btn-primary"
+            className={`btn ${segmentTheme.classes.button}`}
           >
             {t.details}
           </Link>
@@ -286,11 +294,15 @@ function ProductCard({
 export default function ProdutosPage({
   params
 }: {
-  params: { locale: Locale };
+  params: { locale: "pt" | "en"; segment: "automotivo" | "pro-audio" };
 }) {
   const locale = params.locale ?? "pt";
   const messages = locale === "en" ? en : pt;
   const t = messages.productsPage;
+
+  const currentSegment: Segment = isValidSegment(params.segment)
+    ? params.segment
+    : "automotivo";
 
   const localeProducts =
     PRODUCTS_BY_LOCALE[locale] ?? PRODUCTS_BY_LOCALE.pt;
@@ -315,7 +327,7 @@ export default function ProdutosPage({
 
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           {localeProducts.serieK.map((p) => (
-            <ProductCard key={p.name} p={p} locale={locale} t={t} />
+            <ProductCard key={p.name} p={p} locale={locale} t={t} segment={currentSegment} />
           ))}
         </div>
       </section>

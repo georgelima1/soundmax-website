@@ -14,8 +14,9 @@ export const SEGMENTS: Record<
       buttonSoft: string;
       border: string;
       glow: string;
-      gradient: string;
     };
+    glowColor: string;
+    logo: string;
   }
 > = {
   automotivo: {
@@ -28,9 +29,9 @@ export const SEGMENTS: Record<
       buttonSoft: "bg-blue-600/15 hover:bg-blue-600/25 text-blue-200 border border-blue-500/30",
       border: "border-blue-500/30",
       glow: "shadow-[0_0_40px_rgba(37,99,235,0.35)]",
-      gradient:
-        "bg-[radial-gradient(1200px_600px_at_50%_-20%,rgba(37,99,235,0.35),transparent)]",
     },
+    glowColor: "rgba(37,99,235,0.35)",
+    logo: "/logos/logo-transp-azul.png"
   },
 
   "pro-audio": {
@@ -43,12 +44,16 @@ export const SEGMENTS: Record<
       buttonSoft: "bg-red-600/15 hover:bg-red-600/25 text-red-200 border border-red-500/30",
       border: "border-red-500/30",
       glow: "shadow-[0_0_40px_rgba(225,29,46,0.35)]",
-      gradient:
-        "bg-[radial-gradient(1200px_600px_at_50%_-20%,rgba(225,29,46,0.35),transparent)]",
     },
+    glowColor: "rgba(225,29,46,0.35)",
+    logo: "/logos/logo-transp-preto.png"
   },
 };
 
 export function getSegmentTheme(segment: Segment) {
   return SEGMENTS[segment];
+}
+
+export function isValidSegment(segment: string): segment is Segment {
+  return segment === "automotivo" || segment === "pro-audio";
 }

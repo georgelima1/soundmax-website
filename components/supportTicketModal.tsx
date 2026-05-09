@@ -242,7 +242,7 @@ export default function SupportTicketModal({ open, onClose, locale }: Props) {
           <button
             type="submit"
             disabled={sending}
-            className="btn btn-primary w-full"
+            className={`btn ${segmentTheme.classes.button} w-full`}
           >
             {sending ? t.buttons.submitSending : t.buttons.submitIdle}
           </button>

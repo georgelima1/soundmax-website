@@ -4,7 +4,16 @@ import pt from "@/messages/pt.json";
 import en from "@/messages/en.json";
 const dict: Record<string, any> = { pt, en };
 
-export default function PoliticaPage({ params }: { params: { locale: string } }) {
+export function generateStaticParams() {
+  return [
+    { locale: "pt", segment: "automotivo" },
+    { locale: "pt", segment: "pro-audio" },
+    { locale: "en", segment: "automotivo" },
+    { locale: "en", segment: "pro-audio" },
+  ];
+}
+
+export default function PoliticaPage({ params }: { params: { locale: Locale; segment: string } }) {
   const locale = params.locale;
   const messages = dict[locale] ?? dict["pt"];
   const t = messages.privacy;
